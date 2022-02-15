@@ -402,24 +402,31 @@ container.appendChild(div35_f); container.appendChild(div35_b); container.append
   
 
 
-const selected = [];
+const selected = [];//En este array se van guardando las tres selecciones que se hacen por cada intento
 
-// let counter = 0;
+let counter = 0;//Este contador lleva la cuenta de las imágenes descubiertas para finalizar la partida
 
 function compare(img1, img2, img3, id1_f, id2_f, id3_f, id1_b, id2_b, id3_b){
-    document.getElementById("container").style.pointerEvents = "none";
+    document.getElementById("container").style.pointerEvents = "none"; //Se bloquea el click para evitar que se seleccionen más de 3 elementos
     if (img1 == img2 && img2 == img3) {
         console.log("Son iguales");
         document.getElementById(id1_f).style.backgroundColor = "#00ff00"
         document.getElementById(id2_f).style.backgroundColor = "#00ff00"
         document.getElementById(id3_f).style.backgroundColor = "#00ff00"
 
-        document.getElementById("container").style.pointerEvents = "auto";
+        counter += 3;
+
+        //Este condicional evalua cuando las últimas 3 imágenes son descubiertas para lanzar un modal de felicitaciones
+        if(counter == 36){
+            document.getElementById("congratulations").style.display = "flex";
+        }
+
+        document.getElementById("container").style.pointerEvents = "auto"; // Se desbloquea el click si las 3 imágenes son iguales
     }else{
         
         console.log("Son diferentes");
 
-        function hide() {
+        function hide() {//Esta función culta las imágenes cuando no resultan iguales las tres selecciones
             document.getElementById(id1_f).style.display = "none";
             document.getElementById(id2_f).style.display = "none";
             document.getElementById(id3_f).style.display = "none";
@@ -427,15 +434,17 @@ function compare(img1, img2, img3, id1_f, id2_f, id3_f, id1_b, id2_b, id3_b){
             document.getElementById(id2_b).style.display = "flex";
             document.getElementById(id3_b).style.display = "flex";
 
-            document.getElementById("container").style.pointerEvents = "auto";
+            document.getElementById("container").style.pointerEvents = "auto";// Se desbloquea el click y después de ocultarse las imágenes
         }
 
-        setTimeout(hide, 3000);
+        setTimeout(hide, 3000);//Se llama a la función que oculta las imágenes cuando no son iguales
     }
     selected.length = 0; //Se vacía el array selected
 }
 
 
+
+//Agregando los eventos click
 div1_b.addEventListener("click", ()=> {
     div1_b.style.display = "none";
     div1_f.style.display = "flex";
@@ -453,7 +462,6 @@ div1_b.addEventListener("click", ()=> {
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
                 selected[0]['id_b'], selected[1]['id_b'], selected[2]['id_b']);
     }
-    
 })
 
 
@@ -468,7 +476,6 @@ div2_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -488,7 +495,6 @@ div3_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -508,7 +514,6 @@ div4_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -528,7 +533,6 @@ div5_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -548,7 +552,6 @@ div6_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -568,7 +571,6 @@ div7_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -588,7 +590,6 @@ div8_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -608,7 +609,6 @@ div9_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -628,7 +628,6 @@ div10_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -648,7 +647,6 @@ div11_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -668,7 +666,6 @@ div12_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -688,7 +685,6 @@ div13_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -708,7 +704,6 @@ div14_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -728,7 +723,6 @@ div15_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -748,7 +742,6 @@ div16_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -768,7 +761,6 @@ div17_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -788,7 +780,6 @@ div18_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -808,7 +799,6 @@ div19_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -828,7 +818,6 @@ div20_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -848,7 +837,6 @@ div21_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -868,7 +856,6 @@ div22_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -888,7 +875,6 @@ div23_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -908,7 +894,6 @@ div24_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -928,7 +913,6 @@ div25_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -948,7 +932,6 @@ div26_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -968,7 +951,6 @@ div27_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -988,7 +970,6 @@ div28_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1008,7 +989,6 @@ div29_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1028,7 +1008,6 @@ div30_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1048,7 +1027,6 @@ div31_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1068,7 +1046,6 @@ div32_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1088,7 +1065,6 @@ div33_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1108,7 +1084,6 @@ div34_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1128,7 +1103,6 @@ div35_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
@@ -1148,11 +1122,14 @@ div36_b.addEventListener("click", ()=> {
 
     selected.push(obj); 
  
-
     if (selected.length == 3) {
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
                 selected[0]['id_b'], selected[1]['id_b'], selected[2]['id_b']);
     }
+})
+
+document.getElementById("newGame").addEventListener("click", ()=> {
+    location.reload();
 })
