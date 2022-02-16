@@ -403,18 +403,20 @@ container.appendChild(div35_f); container.appendChild(div35_b); container.append
 
 
 const selected = [];//En este array se van guardando las tres selecciones que se hacen por cada intento
-
 let counter = 0;//Este contador lleva la cuenta de las imágenes descubiertas para finalizar la partida
+let attempts = 0;//Almacena el número de intentos, aumenta 1 en cada selección de imagen
+
+document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;
 
 function compare(img1, img2, img3, id1_f, id2_f, id3_f, id1_b, id2_b, id3_b){
     document.getElementById("container").style.pointerEvents = "none"; //Se bloquea el click para evitar que se seleccionen más de 3 elementos
     if (img1 == img2 && img2 == img3) {
         console.log("Son iguales");
-        document.getElementById(id1_f).style.backgroundColor = "#48C9B0 "
-        document.getElementById(id2_f).style.backgroundColor = "#48C9B0 "
-        document.getElementById(id3_f).style.backgroundColor = "#48C9B0 "
+        document.getElementById(id1_f).style.backgroundColor = "#48C9B0"
+        document.getElementById(id2_f).style.backgroundColor = "#48C9B0"
+        document.getElementById(id3_f).style.backgroundColor = "#48C9B0"
 
-        counter += 3;
+        counter += 3;//LLeva el conteo de la cantidad de imágenes descubiertas
 
         //Este condicional evalua cuando las últimas 3 imágenes son descubiertas para lanzar un modal de felicitaciones
         if(counter == 36){
@@ -444,7 +446,7 @@ function compare(img1, img2, img3, id1_f, id2_f, id3_f, id1_b, id2_b, id3_b){
 
 
 
-//Agregando los eventos click
+//Agregando los eventos click para el control de las cajas
 div1_b.addEventListener("click", ()=> {
     div1_b.style.display = "none";
     div1_f.style.display = "flex";
@@ -457,6 +459,8 @@ div1_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -477,7 +481,9 @@ div2_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
-        
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
+
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
                 selected[0]['id_b'], selected[1]['id_b'], selected[2]['id_b']);
@@ -496,6 +502,8 @@ div3_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -515,6 +523,8 @@ div4_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -534,6 +544,8 @@ div5_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -553,6 +565,8 @@ div6_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -572,6 +586,8 @@ div7_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -591,6 +607,8 @@ div8_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -610,6 +628,8 @@ div9_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -629,6 +649,8 @@ div10_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -648,6 +670,8 @@ div11_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -667,6 +691,8 @@ div12_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -686,6 +712,8 @@ div13_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -705,6 +733,8 @@ div14_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -724,6 +754,8 @@ div15_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -743,6 +775,8 @@ div16_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -762,6 +796,8 @@ div17_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -781,6 +817,8 @@ div18_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -800,6 +838,8 @@ div19_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -819,6 +859,8 @@ div20_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -838,6 +880,8 @@ div21_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -857,6 +901,8 @@ div22_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -876,6 +922,8 @@ div23_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -895,6 +943,8 @@ div24_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -914,6 +964,8 @@ div25_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -933,6 +985,8 @@ div26_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -952,6 +1006,8 @@ div27_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -971,6 +1027,8 @@ div28_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -990,6 +1048,8 @@ div29_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1009,6 +1069,8 @@ div30_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1028,6 +1090,8 @@ div31_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1047,6 +1111,8 @@ div32_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1066,6 +1132,8 @@ div33_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1076,7 +1144,7 @@ div33_b.addEventListener("click", ()=> {
 div34_b.addEventListener("click", ()=> {
     div34_b.style.display = "none";
     div34_f.style.display = "flex";
-
+    
     const obj = {src: "", id_f: "", id_b: ""};
     obj.src = img34.src;  
     obj.id_f = "div34_f";
@@ -1085,6 +1153,8 @@ div34_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1104,6 +1174,8 @@ div35_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
@@ -1123,28 +1195,62 @@ div36_b.addEventListener("click", ()=> {
     selected.push(obj); 
  
     if (selected.length == 3) {
+        attempts++; //Modifica la cuenta de los intentos
+        document.getElementById("attempts").innerHTML = `Intentos: ${attempts}`;//Actualiza el valor de los intentos en el tablero
         
         compare(selected[0]['src'], selected[1]['src'], selected[2]['src'], 
                 selected[0]['id_f'], selected[1]['id_f'], selected[2]['id_f'],
                 selected[0]['id_b'], selected[1]['id_b'], selected[2]['id_b']);
     }
-})
+});
 
+
+
+
+//Eventos click para el control de los botones******************************************
+
+//Al terminar una partida, presionando el botón de "nueva partida", se recarga la página 
 document.getElementById("newGame").addEventListener("click", ()=> {
     location.reload();
 });
 
-
-
-document.getElementById("close_button").addEventListener("click", ()=> {
-    
-    document.getElementById("container").style.pointerEvents = "auto";
-});
-
+//Se muestra el modal de las instrucciones y se deshabilita el click en el tablero
 document.getElementById("help_container").addEventListener("click", ()=> {
+    document.getElementById("container").style.pointerEvents = "none";
     document.getElementById("instructions").style.display = "block";
 })
 
-document.getElementById("close_button").addEventListener("click", ()=> {
-    document.getElementById("instructions").style.display = "none";
-})
+//Se cierra el modal de las instrucciones y se habilita el click en el tablero
+    document.getElementById("close_button").addEventListener("click", ()=> {
+        document.getElementById("container").style.pointerEvents = "auto";
+        document.getElementById("instructions").style.display = "none";
+    
+});
+
+
+
+
+
+//Función que ocntrola el cronómetro/
+
+function chronometer(){
+    let min = 0;
+    let sec = 0;
+
+    let interval = setInterval(()=>{
+        sec++;
+        if (sec == 60) {//No se contempla que la partida dure más de una hora
+           min++;
+           sec = 0;
+        }
+        document.getElementById("minutes").innerHTML = `Min: ${min}`;
+        document.getElementById("seconds").innerHTML =  `Seg: ${sec}`;
+
+        if (counter == 36) {
+            clearInterval(interval);
+        }
+    },1000);
+}
+
+
+chronometer();
