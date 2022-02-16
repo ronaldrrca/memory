@@ -410,9 +410,9 @@ function compare(img1, img2, img3, id1_f, id2_f, id3_f, id1_b, id2_b, id3_b){
     document.getElementById("container").style.pointerEvents = "none"; //Se bloquea el click para evitar que se seleccionen más de 3 elementos
     if (img1 == img2 && img2 == img3) {
         console.log("Son iguales");
-        document.getElementById(id1_f).style.backgroundColor = "#00ff00"
-        document.getElementById(id2_f).style.backgroundColor = "#00ff00"
-        document.getElementById(id3_f).style.backgroundColor = "#00ff00"
+        document.getElementById(id1_f).style.backgroundColor = "#48C9B0 "
+        document.getElementById(id2_f).style.backgroundColor = "#48C9B0 "
+        document.getElementById(id3_f).style.backgroundColor = "#48C9B0 "
 
         counter += 3;
 
@@ -1132,4 +1132,19 @@ div36_b.addEventListener("click", ()=> {
 
 document.getElementById("newGame").addEventListener("click", ()=> {
     location.reload();
+});
+
+
+
+document.getElementById("close_button").addEventListener("click", ()=> {
+    
+    document.getElementById("container").style.pointerEvents = "auto";
+});
+
+document.getElementById("help_container").addEventListener("click", ()=> {
+    document.getElementById("instructions").style.display = "block";
+})
+
+document.getElementById("close_button").addEventListener("click", ()=> {
+    document.getElementById("instructions").style.display = "none";
 })

@@ -19,17 +19,20 @@ body{
 
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 #container{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(6, auto);
     grid-template-rows: repeat(6, auto);
     grid-gap: 1rem;
     padding: 2rem;
     background-color: tomato;
+    /* pointer-events: none; */
 }
 
 #container > div{
@@ -42,6 +45,7 @@ main{
     background-color: #ffffff;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 0.5rem;
 }
 
 img{
@@ -74,6 +78,32 @@ p{
     background-color: #ccc;
 }
 
+#instructions{
+    width: 50%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    background-color: #2ECC71 ;
+}
+
+#instructions h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+#instructions ul li{
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #000000;
+}
+
 #congratulations p{
     font-size: 3rem;
     color: #000000;
@@ -89,9 +119,10 @@ p{
 
 #newGame, #cancel{
     cursor: pointer;
-    padding: 0.6rem;
+    width: 15rem;
+    height: 5rem;
     font-size: 1.6rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     color: #ffffff;
 }
 
@@ -102,4 +133,40 @@ p{
 
 #cancel{
     background-color: #ff0000;
+}
+
+#titleGame{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #000000;
+}
+
+#close_button{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s; 
+}
+
+#close_button:hover{
+    transform: scale(1.1);
+}
+
+#help_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#help_container p{
+    color: #000000;
+}
+
+#help_icon{
+    width: 3rem;
 }
